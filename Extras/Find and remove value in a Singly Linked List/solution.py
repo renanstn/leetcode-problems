@@ -30,17 +30,20 @@ class SinglyLinkedList:
 
 
 def remove_value_from_singly_linked_list(linked_list, value_to_find: int):
-    """
-    FIXME: Do modo que está resolvido atualmente, irá quebrar caso o valor
-    buscado seja o primeiro da lista.
-    """
     current_node = linked_list.head
-    previous_node = linked_list.head
+    previous_node = None
 
     while current_node:
         if current_node.data == value_to_find:
             print("FIND")
-            previous_node.next_node = current_node.next_node
+
+            # Check if is the first value
+            if not previous_node:
+                # current_node = current_node.next_node
+                linked_list.head = current_node.next_node
+            else:
+                previous_node.next_node = current_node.next_node
+
         previous_node = current_node
         current_node = current_node.next_node
 
@@ -54,7 +57,7 @@ linked_list.append(119)
 print("\nBefore")
 linked_list.display()
 
-remove_value_from_singly_linked_list(linked_list, 7)
+remove_value_from_singly_linked_list(linked_list, 23)
 
 print("\nAfter")
 linked_list.display()
