@@ -13,10 +13,13 @@ class Solution:
         pivot = array[right]
         start = left - 1
         for i in range(left, right):
+            # We will find elements smaller than the pivot
             if array[i] <= pivot:
+                # When we find, increase start by 1 and swap positions
                 start += 1
                 # Swap positions
                 array[start], array[i] = array[i], array[start]
+        # Finally, swap the pivot to start+1 position
         array[start+1], array[right] = array[right], array[start + 1]
         return start + 1
 
