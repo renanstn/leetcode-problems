@@ -28,9 +28,3 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         self.quicksort(nums, 0, len(nums)-1)
-
-
-solution = Solution()
-nums = [2,0,2,1,1,0]
-solution.sortColors(nums)
-print(nums)
