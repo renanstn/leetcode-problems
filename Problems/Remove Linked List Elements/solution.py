@@ -23,20 +23,3 @@ class Solution:
                 current_node = current_node.next
 
         return dummy.next
-
-
-solution = Solution()
-head = ListNode(val=1,next=ListNode(
-    val=2, next=ListNode(
-        val=6, next=ListNode(
-            val=3, next=ListNode(
-                val=4, next=ListNode(
-                    val=5, next=ListNode(
-                        val=6, next=None)
-                    )
-                )
-            )
-        )
-    ))
-val = 6
-result = solution.removeElements(head, val)
